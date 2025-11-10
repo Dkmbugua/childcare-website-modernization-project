@@ -9,6 +9,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "Our Story", href: "/#our-story" },
   { name: "Programs", href: "/#our-programs" },
+  { name: "Enrichment", href: "/#enrichment-programs" },
   { name: "Mission", href: "/#our-mission" },
   { name: "Contact", href: "/#contact" },
 ];
@@ -16,12 +17,38 @@ const navLinks = [
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  
-  const activeLink = "Home";
+  const [activeSection, setActiveSection] = useState("Home");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      
+      // Detect active section based on scroll position
+      const sections = navLinks.map(link => {
+        const id = link.href.replace('/#', '');
+        if (id === '/') return { name: link.name, element: null, offset: 0 };
+        const element = document.getElementById(id);
+        return { 
+          name: link.name, 
+          element,
+          offset: element ? element.offsetTop - 100 : 0
+        };
+      });
+
+      const scrollPosition = window.scrollY;
+      
+      // Find which section we're currently in
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].element && scrollPosition >= sections[i].offset) {
+          setActiveSection(sections[i].name);
+          return;
+        }
+      }
+      
+      // Default to Home if at top
+      if (scrollPosition < 100) {
+        setActiveSection("Home");
+      }
     };
     
     const handleResize = () => {
@@ -32,6 +59,9 @@ const Header = () => {
     
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
+    
+    // Initial check
+    handleScroll();
     
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
     
@@ -115,15 +145,15 @@ const Header = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className={`relative px-4 py-2 font-navigation text-[15px] font-semibold tracking-[0.5px] transition-all duration-200 rounded group ${
-                        activeLink === link.name 
-                          ? "text-primary-yellow" 
-                          : "text-white hover:text-primary-yellow"
+                      className={`relative px-4 py-2 font-navigation text-[15px] font-semibold tracking-[0.5px] transition-all duration-300 rounded group ${
+                        activeSection === link.name 
+                          ? "text-primary-yellow bg-white/5" 
+                          : "text-white hover:text-primary-yellow hover:bg-white/10"
                       }`}
                     >
                       {link.name}
-                      <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-primary-yellow transition-all duration-300 ${
-                        activeLink === link.name 
+                      <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 bg-primary-yellow transition-all duration-300 rounded-full ${
+                        activeSection === link.name 
                           ? "w-8" 
                           : "w-0 group-hover:w-8"
                       }`}></span>
@@ -217,7 +247,7 @@ const Header = () => {
                       href={link.href}
                       onClick={() => setIsMenuOpen(false)}
                       className={`font-navigation text-3xl font-semibold tracking-wide transition-all duration-200 block ${
-                        activeLink === link.name 
+                        activeSection === link.name 
                           ? "text-primary-yellow scale-110" 
                           : "text-white/90 hover:text-primary-yellow hover:scale-110"
                       }`}
