@@ -74,12 +74,12 @@ const Header = () => {
 
   return (
     <>
-      <a href="#PAGES_CONTAINER" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-[120] px-4 py-2 bg-primary-yellow text-charcoal-black rounded font-semibold">
+      <a href="#PAGES_CONTAINER" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-120 px-4 py-2 bg-primary-yellow text-charcoal-black rounded font-semibold">
         Skip to Main Content
       </a>
       
       {/* Enhanced top info bar with better visibility */}
-      <div className="bg-gradient-to-r from-primary-yellow via-primary-yellow to-[#FFFF40] text-charcoal-black border-b-2 border-charcoal-black/10">
+      <div className="bg-linear-to-r from-primary-yellow via-primary-yellow to-[#FFFF40] text-charcoal-black border-b-2 border-charcoal-black/10">
         <div className="container mx-auto py-3 px-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-6 flex-wrap justify-center sm:justify-start">
@@ -117,14 +117,14 @@ const Header = () => {
       </div>
 
       {/* Enhanced main navigation with improved visibility */}
-      <header className={`sticky top-0 z-[100] w-full transition-all duration-300 ${
+      <header className={`sticky top-0 z-100 w-full transition-all duration-300 ${
         scrolled 
           ? "bg-charcoal-black/95 backdrop-blur-md shadow-2xl" 
           : "bg-charcoal-black shadow-lg"
       }`}>
         <div className="container mx-auto flex h-[90px] items-center justify-between">
           
-          <div className="flex-shrink-0 transition-transform duration-200 hover:scale-105">
+          <div className="shrink-0 transition-transform duration-200 hover:scale-105">
             <Link href="/" aria-label="New Life Child Care Home">
               <Image
                 src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/beb3d5c9-c2e5-448f-a7ab-ae0e11311c93-nlchildcare-com/assets/icons/1-1.png"
@@ -205,7 +205,7 @@ const Header = () => {
 
         {/* Enhanced mobile menu */}
         <div 
-          className={`fixed inset-0 z-[110] bg-gradient-to-br from-charcoal-black via-charcoal-black to-charcoal-black/95 transition-transform duration-300 ease-in-out lg:hidden ${
+          className={`fixed inset-0 z-110 bg-linear-to-br from-charcoal-black via-charcoal-black to-charcoal-black/95 transition-transform duration-300 ease-in-out lg:hidden ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
           role="dialog"

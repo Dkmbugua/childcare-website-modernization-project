@@ -23,7 +23,7 @@ const HeroSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6 }
     }
   };
 
@@ -32,12 +32,12 @@ const HeroSection = () => {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 1, ease: "easeOut" }
+      transition: { duration: 1 }
     }
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden" aria-label="Welcome section">
+    <section className="relative bg-linear-to-br from-gray-50 via-white to-gray-50 overflow-hidden" aria-label="Welcome section">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary-yellow/10 rounded-full blur-3xl" />
@@ -63,11 +63,11 @@ const HeroSection = () => {
                 priority
               />
               {/* Subtle gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-charcoal-black/5 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-br from-charcoal-black/5 via-transparent to-transparent" />
               
               {/* Decorative corner accent */}
-              <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-primary-yellow/30 to-transparent" />
-              <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-sky-blue/30 to-transparent" />
+              <div className="absolute top-0 left-0 w-32 h-32 bg-linear-to-br from-primary-yellow/30 to-transparent" />
+              <div className="absolute bottom-0 right-0 w-32 h-32 bg-linear-to-tl from-sky-blue/30 to-transparent" />
             </div>
 
             {/* Floating badge */}
@@ -112,7 +112,7 @@ const HeroSection = () => {
               </motion.h1>
 
               {/* Accent line */}
-              <motion.div variants={itemVariants} className="h-1 w-24 bg-gradient-to-r from-primary-yellow to-orange-400 rounded-full mb-6" />
+              <motion.div variants={itemVariants} className="h-1 w-24 bg-linear-to-r from-primary-yellow to-orange-400 rounded-full mb-6" />
 
               {/* Subheading */}
               <motion.p
@@ -122,7 +122,7 @@ const HeroSection = () => {
                 New Life Child Care believes in a{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10">"wholesome"</span>
-                  <span className="absolute bottom-1 left-0 w-full h-3 bg-primary-yellow/30 -z-0" />
+                  <span className="absolute bottom-1 left-0 w-full h-3 bg-primary-yellow/30 z-0" />
                 </span>{" "}
                 experience for your child.
               </motion.p>
@@ -139,10 +139,10 @@ const HeroSection = () => {
 
               {/* License Info Card */}
               <motion.div variants={itemVariants} className="relative group mb-8">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-yellow to-orange-400 rounded-2xl opacity-20 group-hover:opacity-30 blur transition-all duration-300" />
-                <div className="relative bg-gradient-to-br from-charcoal-black/5 to-charcoal-black/10 p-5 rounded-2xl border border-charcoal-black/10">
+                <div className="absolute -inset-0.5 bg-linear-to-r from-primary-yellow to-orange-400 rounded-2xl opacity-20 group-hover:opacity-30 blur transition-all duration-300" />
+                <div className="relative bg-linear-to-br from-charcoal-black/5 to-charcoal-black/10 p-5 rounded-2xl border border-charcoal-black/10">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm">
+                    <div className="shrink-0 w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm">
                       <Shield className="text-charcoal-black" size={20} />
                     </div>
                     <div className="flex-1">
@@ -166,7 +166,7 @@ const HeroSection = () => {
                   <Calendar size={20} className="transition-transform group-hover:rotate-12" />
                   <span>SCHEDULE A TOUR</span>
                   <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-yellow/0 via-primary-yellow/20 to-primary-yellow/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-linear-to-r from-primary-yellow/0 via-primary-yellow/20 to-primary-yellow/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 </Link>
                 
                 <a

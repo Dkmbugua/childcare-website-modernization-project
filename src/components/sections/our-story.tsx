@@ -29,7 +29,6 @@ const OurStory = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
       },
     },
   };
@@ -41,7 +40,6 @@ const OurStory = () => {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
       },
     },
   };
@@ -55,7 +53,7 @@ const OurStory = () => {
   return (
     <section
       id="our-story"
-      className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16 md:py-24 overflow-hidden"
+      className="relative bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16 md:py-24 overflow-hidden"
     >
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -87,7 +85,7 @@ const OurStory = () => {
               <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
                 Our Story
               </h2>
-              <div className="h-1 w-24 bg-gradient-to-r from-primary-yellow to-orange-400 rounded-full mb-4" />
+              <div className="h-1 w-24 bg-linear-to-r from-primary-yellow to-orange-400 rounded-full mb-4" />
               <p className="font-body text-xl md:text-2xl font-light italic text-white/90">
                 Built on a dream, powered by passion
               </p>
@@ -110,9 +108,9 @@ const OurStory = () => {
             {/* Christian Foundation Card */}
             <motion.div
               variants={itemVariants}
-              className="relative group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:border-primary-yellow/30 transition-all duration-300"
+              className="relative group bg-linear-to-br from-white/10 to-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:border-primary-yellow/30 transition-all duration-300"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/0 to-primary-yellow/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-linear-to-br from-primary-yellow/0 to-primary-yellow/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative z-10">
                 <h3 className="font-semibold text-xl text-white mb-4 flex items-center gap-3">
                   <div className="p-2 bg-primary-yellow/20 rounded-lg">
@@ -131,7 +129,7 @@ const OurStory = () => {
                     "Welcoming environment for all families",
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-center gap-3 text-sm text-white/80">
-                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary-yellow/20 flex items-center justify-center">
+                      <div className="shrink-0 w-5 h-5 rounded-full bg-primary-yellow/20 flex items-center justify-center">
                         <Heart className="text-primary-yellow" size={12} />
                       </div>
                       <span>{item}</span>
@@ -159,7 +157,7 @@ const OurStory = () => {
           <motion.div variants={imageVariants} className="relative lg:order-last">
             <div className="relative group">
               {/* Decorative elements */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary-yellow/20 to-orange-400/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-50" />
+              <div className="absolute -inset-4 bg-linear-to-r from-primary-yellow/20 to-orange-400/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-50" />
               
               {/* Main image container */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
@@ -171,7 +169,7 @@ const OurStory = () => {
                   className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-900/50 via-transparent to-transparent" />
               </div>
 
               {/* Floating badge */}
@@ -179,10 +177,10 @@ const OurStory = () => {
                 initial={{ opacity: 0, x: -20, y: 20 }}
                 animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
                 transition={{ delay: 0.8, duration: 0.6 }}
-                className="absolute -bottom-6 -left-6 bg-gradient-to-br from-primary-yellow to-orange-400 text-slate-900 p-6 rounded-2xl shadow-2xl max-w-[240px] border-4 border-white/10"
+                className="absolute -bottom-6 -left-6 bg-linear-to-br from-primary-yellow to-orange-400 text-slate-900 p-6 rounded-2xl shadow-2xl max-w-60 border-4 border-white/10"
               >
                 <div className="flex items-start gap-3 mb-2">
-                  <Sparkles className="text-slate-900 flex-shrink-0" size={28} />
+                  <Sparkles className="text-slate-900 shrink-0" size={28} />
                   <div>
                     <p className="text-lg font-bold leading-tight">Serving Hanover families</p>
                     <p className="text-2xl font-black">since 2017</p>

@@ -90,7 +90,7 @@ const Programs = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6 }
     }
   };
 
@@ -113,13 +113,12 @@ const Programs = () => {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
       }
     }
   };
 
   return (
-    <section id="our-programs" className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 md:py-24 overflow-hidden">
+    <section id="our-programs" className="relative bg-linear-to-b from-slate-950 via-slate-900 to-slate-950 py-16 md:py-24 overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-48 w-96 h-96 bg-sky-blue/5 rounded-full blur-3xl" />
@@ -143,7 +142,7 @@ const Programs = () => {
           <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Our Programs
           </h2>
-          <div className="h-1 w-32 bg-gradient-to-r from-sky-blue to-primary-yellow rounded-full mx-auto mb-6" />
+          <div className="h-1 w-32 bg-linear-to-r from-sky-blue to-primary-yellow rounded-full mx-auto mb-6" />
           <p className="text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Age-appropriate curriculum designed to nurture growth, curiosity, and learning at every developmental stage.
           </p>
@@ -166,13 +165,13 @@ const Programs = () => {
                 className="group relative"
               >
                 {/* Hover glow effect */}
-                <div className={`absolute -inset-0.5 bg-gradient-to-r ${program.color} rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500`} />
+                <div className={`absolute -inset-0.5 bg-linear-to-r ${program.color} rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500`} />
                 
                 {/* Card content */}
-                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 group-hover:border-white/20 transition-all duration-300 h-full flex flex-col">
+                <div className="relative bg-linear-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 group-hover:border-white/20 transition-all duration-300 h-full flex flex-col">
                   {/* Header with icon */}
                   <div className="flex items-start gap-4 mb-5">
-                    <div className={`relative flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${program.color} p-0.5 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`relative shrink-0 w-16 h-16 rounded-2xl bg-linear-to-br ${program.color} p-0.5 group-hover:scale-110 transition-transform duration-300`}>
                       <div className="w-full h-full bg-slate-900 rounded-2xl flex items-center justify-center">
                         <IconComponent className="text-white" size={28} />
                       </div>
@@ -197,7 +196,7 @@ const Programs = () => {
 
                   {/* Highlights */}
                   {program.highlights && (
-                    <div className="space-y-3 mb-6 flex-grow">
+                    <div className="space-y-3 mb-6 grow">
                       {program.highlights.map((highlight, idx) => (
                         <motion.div
                           key={idx}
@@ -206,7 +205,7 @@ const Programs = () => {
                           transition={{ delay: index * 0.15 + idx * 0.1 }}
                           className="flex items-start gap-3 text-sm text-white/70 group/item hover:text-white/90 transition-colors"
                         >
-                          <div className="flex-shrink-0 mt-0.5">
+                          <div className="shrink-0 mt-0.5">
                             <CheckCircle2 className="text-primary-yellow group-hover/item:text-green-400 transition-colors" size={18} />
                           </div>
                           <span className="leading-relaxed">{highlight}</span>
@@ -219,7 +218,7 @@ const Programs = () => {
                   {program.note && (
                     <div className="mt-auto pt-5 border-t border-white/10">
                       <div className="flex items-start gap-2">
-                        <Sparkles className="text-primary-yellow flex-shrink-0 mt-0.5" size={16} />
+                        <Sparkles className="text-primary-yellow shrink-0 mt-0.5" size={16} />
                         <p className="text-primary-yellow text-sm font-medium italic">
                           {program.note}
                         </p>
@@ -241,10 +240,10 @@ const Programs = () => {
         >
           <div className="relative group">
             {/* Glow effect */}
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-sky-blue to-primary-yellow rounded-3xl opacity-20 group-hover:opacity-30 blur-xl transition-all duration-500" />
+            <div className="absolute -inset-0.5 bg-linear-to-r from-sky-blue to-primary-yellow rounded-3xl opacity-20 group-hover:opacity-30 blur-xl transition-all duration-500" />
             
             {/* Content */}
-            <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-10">
+            <div className="relative bg-linear-to-br from-white/10 to-white/5 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-10">
               <div className="flex items-center justify-center gap-3 mb-6">
                 <Award className="text-primary-yellow" size={32} />
                 <h3 className="text-3xl md:text-4xl font-bold text-white text-center">
